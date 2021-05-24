@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    background-image: url("images/bg-top.svg"), url("images/bg-bottom.svg");
+    background-position: left 100% bottom 100%, 
+                         right 100% top 100% ;
+                         
+    background-color: hsl(240, 78%, 98%);
+    background-repeat: no-repeat;
+    background-size: 300px;
+    font-size: 16px;
+}
+
+.pricingcontainer {
+    width: 100%;
+    height: 145px;
+    text-align: center;
+    padding-top: 45px;
+}
+
+.period {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pricinginfo {
+    font-size: 1.6em;
+    color: hsl(233, 13%, 49%);
+    margin-bottom: 30px;
+}
+
+.period span {
+    font-size: 0.75em;
+    color:hsl(233, 13%, 49%);
+}
+
+.imagecontainer {
+    min-width: 47px;
+    width: 3.4%;
+    height: 25px;
+    border-radius: 25px;
+    background-color: hsla(237, 63%, 64%, 0.8);
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+    padding: 0.3%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.circle {
+    width: 49%;
+    height: 20px;
+    background-color: white;
+    border-radius: 50px;
+    position: relative;
+    left: 0px;
+}
+
+.ball {
+    width: 49%;
+    height: 20px;
+    background-color: white;
+    border-radius: 50px;
+    position: relative;
+    left: 20px;
+}
+
+/* Styling for the three divs on the page" */
+.maincontainer {
+    width: 100%;
+    height: 380px;
+    position: relative;
+    top: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.basic, .master {
+    width: 20%;
+    background-color: white;
+    padding-top: 15px;
+    height: 350px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.level {
+    color: hsl(232, 13%, 33%);
+    margin-top: 12px;
+    margin-bottom: 10px;
+}
+
+.divinfo {
+    color:hsl(233, 13%, 49%);
+    font-size: 0.7em;
+}
+
+.price {
+    font-size: 1.3em;
+    color:hsl(233, 13%, 49%);
+}
+
+.price span {
+    font-size: 1.6em;
+}
+
+hr {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 70%;
+    position: relative;
+    left: 15%;
+}
+
+.basic-button, .mast-button {
+    width: 70%;
+    height: 40px;
+    background-image: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    color: white;
+    font-size: 0.6em;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Styles for the professional section */ 
+
+.professional {
+    height: 390px;
+    width: 20%;
+    background-color: hsl(237, 63%, 64%);
+    color: white;
+    padding-top: 45px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 3px 3px 12px 0px grey;
+    z-index: 1;
+}
+
+.pro-button {
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    width: 70%;
+    height: 40px;
+    font-size: 0.6em;
+    cursor: pointer;
+}
+
+.prof-level {
+    color: white;
+    margin-top: 12px;
+    margin-bottom: 10px;
+}
+
+.prof-divinfo {
+    font-size: 0.7em;
+    color: white;
+}
+
+.professional .prof-price {
+    font-size: 1.3em;
+}
+
+.professional .prof-price span {
+    font-size: 1.6em;
+}
+
+/* Styling for the active states */
+
+.basic-button:hover,
+.mast-button:hover {
+   color: hsl(232, 13%, 33%);
+   background-image: linear-gradient(white, white);
+   border: thin solid hsl(234, 14%, 74%);
+}
+
+.pro-button:hover {
+    color: white;
+    background-color: hsl(237, 63%, 64%);
+    border: thin solid white;
+}
+
+.imagecontainer:hover {
+    background-color: hsl(236, 72%, 79%);
+}
+
+
+
+/* Media Queries */
+
+@media only screen and (max-width: 1000px) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 3fr;
+        grid-template-areas: "pricing"
+                             "bottom"
+    }
+
+    .pricingcontainer {
+        grid-area: pricing;
+        width: 100%
+    }
+
+    .maincontainer {
+        grid-area: bottom;
+        flex-direction: column;
+        height: 110%;        
+    }
+
+    .basic, .professional, .master {
+        width: 90%;
+        height: 100%;
+        margin-bottom: 8% !important;
+        margin: auto;
+    }
+
+    .basic, .master {
+        box-shadow: 3px 3px 12px 0px grey;
+    }
+}
